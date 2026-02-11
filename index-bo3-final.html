@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎲 BO3 Analisis & Prediksi Lempar Dadu</title>
+    <link rel="stylesheet" href="styles-bo3-final.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🎲 BO3 Sistem Analisis & Prediksi Lempar Dadu</h1>
+            <p class="subtitle">Analisis Data Game Sebelumnya untuk Prediksi Game Selanjutnya</p>
+        </header>
+
+        <!-- Current Game Info -->
+        <section class="card">
+            <h2>📍 Game Current: <span id="currentGame">1</span></h2>
+            <p id="gameStatus" class="game-status-text">Input Match untuk Game 1</p>
+            <div id="currentScore" class="current-score" style="margin-top: 15px; display: none;">
+                <p style="font-weight: 600; font-size: 1.1em;">Skor Saat Ini: <span id="scoreDisplay">0-0</span></p>
+            </div>
+        </section>
+
+        <!-- Input Form for BO3 -->
+        <section class="card">
+            <h2>📝 Input BO3 Game</h2>
+            <div id="matchInputs">
+                <!-- Match inputs akan di-generate -->
+            </div>
+            <div id="matchButtons" style="margin-top: 20px; display: none;">
+                <button type="button" class="btn-primary" id="submitMatchBtn">✅ Submit Match Ini</button>
+                <button type="button" class="btn-danger" id="finishGameBtn" style="display: none; margin-top: 10px;">🏁 Selesaikan Game BO3</button>
+            </div>
+            <button type="button" class="btn-primary" id="submitGameBtn">✅ Submit Game BO3</button>
+        </section>
+
+        <!-- Summary Stats -->
+        <section class="card">
+            <h2>📊 Ringkasan Data (Semua Games)</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="label">Total Games Selesai:</span>
+                    <span class="value" id="totalGames">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">KECIL Menang Series:</span>
+                    <span class="value" id="kecilWinsTotal">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">BESAR Menang Series:</span>
+                    <span class="value" id="besarWinsTotal">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Series Dominan:</span>
+                    <span class="value" id="seriesDominant">-</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game History Table -->
+        <section class="card">
+            <h2>📋 Histori Game (BO3 Results)</h2>
+            <div class="table-responsive">
+                <table id="gameTable">
+                    <thead>
+                        <tr>
+                            <th>Game #</th>
+                            <th>Match 1</th>
+                            <th>Match 2</th>
+                            <th>Match 3</th>
+                            <th>Skor Final</th>
+                            <th>Pemenang Series</th>
+                            <th>Jumlah Match</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gameTableBody">
+                        <tr class="empty-state">
+                            <td colspan="7">Data kosong. Mulai input Game BO3 pertama!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-secondary" id="clearBtn" style="margin-top: 10px;">🗑️ Hapus Semua Data</button>
+        </section>
+
+        <!-- Numeric Trend Analysis -->
+        <section class="card">
+            <h2>📈 Analisis Tren Numerik (Series History - 10-20 Game Terakhir)</h2>
+            <canvas id="trendChart" height="100"></canvas>
+            <div class="trend-summary" id="trendSummary">
+                <p class="empty-state">Data belum cukup untuk analisis tren</p>
+            </div>
+        </section>
+
+        <!-- State Transition Analysis -->
+        <section class="card">
+            <h2>🔄 Matriks Transisi Series Winner</h2>
+            <div id="transitionMatrix" class="transition-matrix">
+                <p class="empty-state">Data belum cukup untuk analisis transisi</p>
+            </div>
+        </section>
+
+        <!-- Series Winner Pattern -->
+        <section class="card">
+            <h2>🏆 Pola Pemenang Series (KECIL vs BESAR)</h2>
+            <div id="winnerPattern" class="analysis-box">
+                <p class="empty-state">Data belum cukup untuk analisis pola pemenang</p>
+            </div>
+        </section>
+
+        <!-- Prediction for Next Game -->
+        <section class="card prediction-card">
+            <h2>🔮 Prediksi Pemenang Game Berikutnya</h2>
+            <div id="predictionOutput" class="prediction-box">
+                <p class="empty-state">Input minimal 3 Game BO3 untuk prediksi akurat</p>
+            </div>
+        </section>
+
+        <!-- Analysis Basis -->
+        <section class="card">
+            <h2>📌 Dasar Analisis Prediksi</h2>
+            <div id="analysisBasis" class="analysis-basis">
+                <p class="empty-state">Dasar analisis akan ditampilkan setelah prediksi</p>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="card disclaimer">
+            <h2>⚠️ Disclaimer Ilmiah</h2>
+            <p>
+                Sistem ini menganalisis <strong>pola historis dari BO3 series</strong> yang telah selesai
+                untuk memprediksi pemenang BO3 berikutnya. Menggunakan <strong>tren numerik, transisi state,
+                dan pola pemenang</strong> dari data sebelumnya.
+            </p>
+            <p>
+                <strong>Penting:</strong> Setiap BO3 series adalah kejadian independen. Pola yang terlihat
+                tidak menjamin hasil series berikutnya. Gunakan sistem ini hanya sebagai <strong>alat bantu analisis</strong>.
+            </p>
+        </section>
+    </div>
+
+    <script src="script-bo3-final.js"></script>
+</body>
+</html>
