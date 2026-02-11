@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎲 BO3 Analisis Lempar Dadu</title>
+    <link rel="stylesheet" href="styles-bo3.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🎲 BO3 - Best of 3 Analisis Dadu</h1>
+            <p class="subtitle">3 Match, Siapa Yang Menang 2 Match Pertama?</p>
+        </header>
+
+        <!-- Score Board -->
+        <section class="card scoreboard-card">
+            <div class="scoreboard">
+                <div class="team kecil-team">
+                    <h2>🔵 KECIL</h2>
+                    <div class="team-score" id="kecilScore">0</div>
+                    <p class="team-label">Match Wins</p>
+                </div>
+                <div class="vs-divider">VS</div>
+                <div class="team besar-team">
+                    <h2>🔴 BESAR</h2>
+                    <div class="team-score" id="besarScore">0</div>
+                    <p class="team-label">Match Wins</p>
+                </div>
+            </div>
+            <div class="series-status">
+                <span id="seriesStatus">Seri 0-0 | Match 1 Berlangsung</span>
+            </div>
+        </section>
+
+        <!-- Match Info -->
+        <section class="card">
+            <h2>📍 Match Current: <span id="currentMatch">1</span> / 3</h2>
+            <p id="matchStatus" class="match-status-text">Masukkan Roll 1 & Roll 2 untuk Match 1</p>
+        </section>
+
+        <!-- Input Form -->
+        <section class="card">
+            <h2>📝 Input Roll untuk Match</h2>
+            <form id="inputForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="roll1">Roll 1 (6-54):</label>
+                        <input type="number" id="roll1" min="6" max="54" placeholder="Contoh: 25" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roll2">Roll 2 (6-54):</label>
+                        <input type="number" id="roll2" min="6" max="54" placeholder="Contoh: 38" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary" id="submitBtn">➕ Submit Match</button>
+            </form>
+        </section>
+
+        <!-- Match Results Timeline -->
+        <section class="card">
+            <h2>📊 Timeline Match Results</h2>
+            <div class="timeline" id="timeline">
+                <div class="timeline-item placeholder">
+                    <p>Match results akan ditampilkan di sini</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Match Details -->
+        <section class="card">
+            <h2>🔍 Detail Match Saat Ini</h2>
+            <div id="matchDetails" class="match-details">
+                <p class="empty-state">Belum ada data</p>
+            </div>
+        </section>
+
+        <!-- Analysis for Current Match -->
+        <section class="card">
+            <h2>📈 Analisis Match Terbaru</h2>
+            <div id="matchAnalysis" class="analysis-box">
+                <p class="empty-state">Analisis akan ditampilkan setelah submit</p>
+            </div>
+        </section>
+
+        <!-- BO3 Series Analysis -->
+        <section class="card">
+            <h2>🔄 Analisis Seri BO3</h2>
+            <div id="seriesAnalysis" class="analysis-box">
+                <p class="empty-state">Minimal 1 match untuk analisis seri</p>
+            </div>
+        </section>
+
+        <!-- Prediction for Next Match -->
+        <section class="card prediction-card">
+            <h2>🔮 Prediksi Match Berikutnya</h2>
+            <div id="nextPrediction" class="prediction-box">
+                <p class="empty-state">Selesaikan minimal 1 match untuk prediksi</p>
+            </div>
+        </section>
+
+        <!-- BO3 Winner -->
+        <section class="card" id="winnerSection" style="display: none;">
+            <h2>🏆 Pemenang BO3!</h2>
+            <div id="winnerDisplay" class="winner-display"></div>
+            <button class="btn-primary" id="resetBtn" style="margin-top: 20px;">🔄 Reset BO3</button>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="card disclaimer">
+            <h2>⚠️ Disclaimer Ilmiah</h2>
+            <p>
+                Sistem ini menganalisis <strong>pola dari 3 match</strong> dalam seri BO3. 
+                Prediksi berdasarkan <strong>tren lokal dan transisi state</strong>, bukan probabilitas global.
+            </p>
+            <p>
+                <strong>Penting:</strong> Setiap roll adalah kejadian independen. Pola yang terlihat 
+                dalam BO3 tidak menjamin hasil match berikutnya. Gunakan hanya sebagai <strong>alat analisis</strong>.
+            </p>
+        </section>
+    </div>
+
+    <script src="script-bo3.js"></script>
+</body>
+</html>
